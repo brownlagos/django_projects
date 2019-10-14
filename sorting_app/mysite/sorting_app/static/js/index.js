@@ -6,6 +6,7 @@ function populateList(list){
 
     for(var i=0;i < LIST_LENGTH;i++){
         if(i < list.length){
+            console.log(list[i].toString())
             code += element_block_code(list[i].toString())
         
         }else{
@@ -18,10 +19,22 @@ function populateList(list){
 
 }
 
+function upload(){
+    list_str = INPUT_LIST_ELEMENT.value;
+    
+    // sets teh hidden field
+    HIDDEN_INPUT_ELEMENT.value = list_str;
+
+    // converts list string to list
+    list = list_str.split(' ');
+
+    // populates the grid
+    populateList(list);
+}
+
 const LIST_LENGTH = 10;
 const LIST_ELEMENT = document.getElementById('list');
+const INPUT_LIST_ELEMENT = document.getElementById('input_list');
+const HIDDEN_INPUT_ELEMENT = document.getElementById('hidden_list');
 
-// the array list
-list = [2, 4, 1, 5, 6, 8,1,7,2,7,3,6,9,3,8,4,2,6,8,2,6];
-
-populateList(list)
+populateList([])

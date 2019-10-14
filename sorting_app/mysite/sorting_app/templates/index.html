@@ -17,11 +17,11 @@
             <!-- the list upload section -->
             <div id="input-section">
                 
-                <form action="">
+                <form>
                     <label>List Input:</label><br>
 
-                    <input type="text" placeholder="Type list here [1, 2, 3, 4]">
-                    <input type="submit" value="upload">
+                    <input type="text" placeholder="Type list here 1 21 34 4" id="input_list">
+                    <input type="button" value="upload" onclick="upload()">
                 </form>
             </div>
 
@@ -30,7 +30,17 @@
                 <div id="list">
 
                 </div>
+                <br>
+                <br>
+
+                <form method="POST">{% csrf_token %}
+                    <input type="hidden" name="list" id="hidden_list">
+                    <input type="submit" value="Sort Now">
+                </form>
             </div>
+
+            
+
             
         </div>
     
