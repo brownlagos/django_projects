@@ -1,5 +1,5 @@
 function populateList(list){
-    element_block_code = (value=0) => { return `<div id="element">{value}</div>`};
+    element_block_code = (value=0) => { return '<div id="element">' + value + '</div>'};
     
     // contains the code to populate list
     code = '';
@@ -7,6 +7,7 @@ function populateList(list){
     for(var i=0;i < LIST_LENGTH;i++){
         if(i >= list.length){
             code += element_block_code();
+            continue;
         }
 
         console.log(list[i].toString())

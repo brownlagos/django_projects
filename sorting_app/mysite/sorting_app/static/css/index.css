@@ -47,11 +47,13 @@
 
 #container > #list-section > #list{
     width: 100%;
-    background-color: blue;
+    height: 100px;
 }
 
 #container > #list-section > #list > #element{
-    width:10%;
-    height: 100px;
+    width:9.8%;
+    height: 100%;
     border: 1px solid black;
+    float: left;
+    background-color: blue;
 }
