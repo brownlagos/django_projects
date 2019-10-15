@@ -22,14 +22,17 @@ function populateList(list){
 function upload(){
     list_str = INPUT_LIST_ELEMENT.value;
     
+    // converts list string to list
+    num_list = list_str.split(' ').slice(0, 10);
+
+    // slice the list before sending to the backend
+    list_str = num_list.join(' ');
+
     // sets teh hidden field
     HIDDEN_INPUT_ELEMENT.value = list_str;
 
-    // converts list string to list
-    list = list_str.split(' ');
-
     // populates the grid
-    populateList(list);
+    populateList(num_list);
 }
 
 const LIST_LENGTH = 10;
